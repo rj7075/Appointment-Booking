@@ -11,7 +11,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/users",
+          "https://appointment-booking-backend-mw2h.onrender.com/api/users",
           {
             headers: {
               Authorization: `Bearer ${token}`,
