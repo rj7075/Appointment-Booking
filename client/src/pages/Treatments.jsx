@@ -10,7 +10,7 @@ const TreatmentsSection = () => {
       try {
         const res = await axios.get(
           "https://appointment-booking-backend-mw2h.onrender.com/api/treatments"
-        ); // adjust if deployed
+        ); 
         setTreatments(res.data);
       } catch (err) {
         console.error("Error fetching treatments", err);
