@@ -22,7 +22,7 @@ const BookAppointment = () => {
     const fetchUserAndTreatments = async () => {
       try {
         const treatRes = await axios.get(
-          "http://localhost:5000/api/treatments"
+          "https://appointment-booking-backend-mw2h.onrender.com/api/treatments"
         );
         setTreatments(treatRes.data);
 
