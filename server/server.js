@@ -26,6 +26,11 @@ app.use("/api/treatments", treatmentRoutes);
 app.use("/api/services", require("./routes/serviceRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
+
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
@@ -35,9 +40,6 @@ mongoose.connect(process.env.MONGO_URI)
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-});
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
 });
 
 
