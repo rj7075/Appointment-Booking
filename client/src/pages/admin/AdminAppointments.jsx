@@ -20,7 +20,7 @@ const AdminAppointments = () => {
     if (!window.confirm("Are you sure to delete this appointment?")) return;
     try {
       await axios.delete(
-        `http://localhost:5000/api/appointments/${id}`
+        `https://appointment-booking-backend-mw2h.onrender.com/api/appointments/${id}`
       );
       fetchAppointments();
     } catch (err) {
