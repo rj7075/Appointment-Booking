@@ -19,7 +19,7 @@ const Login = () => {
     try {
       // Step 1: Login request
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/login",
         formData
       );
       const token = res.data.token;
