@@ -10,15 +10,15 @@ import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://app.shapo.io/widgets/display.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script); // clean up
-    };
-  }, []);
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://app.shapo.io/widgets/display.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  //   return () => {
+  //     document.body.removeChild(script); // clean up
+  //   };
+  // }, []);
 
   return (
     <div>
@@ -58,12 +58,12 @@ const Home = () => {
           <h2 className="mb-4">What Our Patients Say</h2>
           {/* Use the Shapo widget div below */}
           <div id="shapo-widget-3cabe4672b2773c9f54c"></div>
-          <script
+{/*           <script
             id="shapo-embed-js"
             type="text/javascript"
             src="https://cdn.shapo.io/js/embed.js"
             defer
-          ></script>
+          ></script> */}
         </div>
       </section>
       {/* Why Choose Us */}
