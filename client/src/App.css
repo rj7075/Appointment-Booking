@@ -1,0 +1,100 @@
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e6f3ff;
+    color: #212529;
+    line-height: 1.6;
+}
+
+/* Anchor styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #0d6efd;
+}
+
+/* Container utility */
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* Button overrides */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5c636a;
+}
+
+/* Page section spacing */
+.text-center {
+    text-align: center;
+}
+
+/* Responsive Headings */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Admin panel layout */
+.admin-panel {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Responsive Utilities */
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bookAppointment .btn {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+}

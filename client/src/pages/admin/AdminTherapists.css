@@ -1,0 +1,132 @@
+/* Container styles */
+.admin-therapists {
+    padding: 1rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.admin-therapists h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Form */
+.admin-therapists form {
+    background-color: #f3f4f6;
+    /* light gray */
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.admin-therapists form input,
+.admin-therapists form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.admin-therapists form button {
+    background-color: #2563eb;
+    /* blue-600 */
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-therapists form button:hover {
+    background-color: #1d4ed8;
+    /* blue-700 */
+}
+
+/* Therapist card grid */
+.therapist-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .therapist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .therapist-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Therapist card */
+.therapist-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    border: 1px solid #e5e7eb;
+    /* gray-200 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.therapist-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+}
+
+.therapist-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.therapist-card p {
+    margin: 0.2rem 0;
+    color: #333;
+}
+
+/* Buttons */
+.card-buttons {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.card-buttons button {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-buttons .edit-btn {
+    background-color: #facc15;
+    /* yellow-400 */
+    color: #000;
+}
+
+.card-buttons .edit-btn:hover {
+    background-color: #eab308;
+}
+
+.card-buttons .delete-btn {
+    background-color: #dc2626;
+    /* red-600 */
+    color: #fff;
+}
+
+.card-buttons .delete-btn:hover {
+    background-color: #b91c1c;
+}

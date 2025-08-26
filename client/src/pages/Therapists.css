@@ -1,0 +1,77 @@
+/* Therapist Section Container */
+.therapist-section {
+    padding: 3rem 1rem;
+}
+
+/* Section Heading */
+.therapist-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #0d6efd;
+    text-align: center;
+}
+.therapist-section h2 span{
+    color: #1c4077;
+    font-size: 2.8rem;
+}
+
+/* Therapist Card */
+.therapist-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+/* Hover Effect */
+.therapist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+}
+
+/* Therapist Image */
+.therapist-img {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Card Body */
+.therapist-card .card-body {
+    text-align: center;
+    padding: 1rem;
+}
+
+.therapist-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.therapist-card .card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .therapist-img {
+        height: 200px;
+    }
+
+    .therapist-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .therapist-card .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .therapist-section {
+        padding: 2rem 0.5rem;
+    }
+}

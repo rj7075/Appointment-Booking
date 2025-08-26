@@ -1,0 +1,99 @@
+/* Navbar container */
+.navbar {
+    padding: 0.8rem 1.5rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Logo image styling */
+.navbar-brand img {
+    height: 80px;
+    width: 100px;
+}
+
+/* Nav links base styling */
+.navbar-nav .nav-link {
+    margin-top: -0.2rem;
+   
+    font-weight: 700;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  
+    /* good to show pointer */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Welcome user text */
+.navbar-nav .nav-link strong {
+    color: #007bff;
+}
+
+/* Active link style (optional if using NavLink) */
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    min-width: 150px;
+    font-size: 0.95rem;
+    /* Add subtle shadow and border for dropdown */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+/* Dropdown menu item hover */
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Dropdown toggle link style */
+.nav-link.dropdown-toggle {
+    user-select: none;
+    /* prevent text selection on click */
+}
+
+/* When dropdown toggle is open (has show class), add arrow rotation */
+.nav-link.dropdown-toggle.show::after {
+    transform: rotate(180deg);
+}
+
+/* Add arrow after dropdown toggle link */
+.nav-link.dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+}
+
+/* Toggler button spacing */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+/* Mobile nav items center */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .navbar-brand {
+        margin-left: 0;
+    }
+}

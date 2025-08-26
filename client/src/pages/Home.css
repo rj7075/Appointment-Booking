@@ -1,0 +1,85 @@
+/* Hero Section */
+section.text-dark {
+    background-color: #e8f0fe;
+    color: #1a1a1a;
+}
+
+section.text-dark h1 span {
+    color: #0d6efd;
+    /* Blue highlight for brand name */
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Buttons Section */
+.bookAppointment {
+    padding: 30px 15px;
+    background-color: #f8f9fa;
+}
+
+.bookAppointment .btn {
+    min-width: 220px;
+    margin: 10px 10px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.bookAppointment .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.bookAppointment .btn-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Testimonials Section */
+#shapo-widget-3cabe4672b2773c9f54c {
+    margin-top: 20px;
+    min-height: 300px;
+}
+.container h2{
+    color: #1c4077;
+    font-size: 2.3rem;
+    font-weight: 700;
+        
+}
+/* Why Choose Us Section */
+.bg-light {
+    background-color: #f4f4f4 !important;
+}
+
+.bg-light .col-md-4 {
+    margin-bottom: 30px;
+}
+
+.bg-light h4 {
+    font-size: 1.25rem;
+    color: #0d6efd;
+}
+
+.bg-light p {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bookAppointment .btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    section.text-dark h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,71 @@
+/* Carousel Wrapper */
+.carousel {
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+    /* border-radius: 10px; */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ensure all carousel items are same height */
+.carousel-inner,
+.carousel-item {
+    height: 500px;
+}
+
+/* Image styling */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* ensures image fills and maintains aspect ratio */
+    display: block;
+}
+
+/* Captions */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+/* Text styling */
+.carousel-caption h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+
+    .carousel-inner,
+    .carousel-item {
+        height: 160px;
+    }
+
+    .carousel-caption {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        bottom: 20px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    .carousel-item img {
+        height: 160px;
+        width: 100%;
+    }
+}
