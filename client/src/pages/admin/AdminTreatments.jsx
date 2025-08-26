@@ -17,7 +17,7 @@ const AdminTreatments = () => {
   const fetchTreatments = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/treatments"
+        "https://appointment-booking-backend-mw2h.onrender.com/api/treatments"
       );
       setTreatments(res.data);
     } catch (err) {
@@ -51,7 +51,7 @@ const AdminTreatments = () => {
     if (!window.confirm("Are you sure to delete this Treatment?")) return;
     try {
       await axios.delete(
-        `http://localhost:5000/api/treatments/${id}`,
+        `https://appointment-booking-backend-mw2h.onrender.com/api/treatments/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -74,7 +74,7 @@ const AdminTreatments = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/treatments/${editingId}`,
+          `https://appointment-booking-backend-mw2h.onrender.com/api/treatments/${editingId}`,
           payload,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -83,7 +83,7 @@ const AdminTreatments = () => {
         setMessage("Treatment updated!");
       } else {
         await axios.post(
-          "http://localhost:5000/api/treatments",
+          "https://appointment-booking-backend-mw2h.onrender.com/api/treatments",
           payload,
           {
             headers: { Authorization: `Bearer ${token}` },
