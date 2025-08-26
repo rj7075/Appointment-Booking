@@ -23,7 +23,7 @@ const Register = () => {
     setError(null);
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/register",
         formData
       );
       toast.success("Registered Successfully . Please login!")
