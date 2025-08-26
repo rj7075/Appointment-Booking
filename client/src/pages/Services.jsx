@@ -9,7 +9,7 @@ const ServicesSection = () => {
     const fetchServices = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/services"
+          "https://appointment-booking-backend-mw2h.onrender.com/api/services"
         );
         setServices(res.data);
       } catch (err) {
