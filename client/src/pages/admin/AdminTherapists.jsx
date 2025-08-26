@@ -15,7 +15,7 @@ const AdminTherapists = () => {
 
   const fetchTherapists = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/therapists"
+      "https://appointment-booking-backend-mw2h.onrender.com/api/therapists"
     );
     setTherapists(res.data);
   };
@@ -32,12 +32,12 @@ const AdminTherapists = () => {
     e.preventDefault();
     if (editId) {
       await axios.put(
-        `http://localhost:5000/api/therapists/${editId}`,
+        `https://appointment-booking-backend-mw2h.onrender.com/api/therapists/${editId}`,
         formData
       );
     } else {
       await axios.post(
-        "http://localhost:5000/api/therapists",
+        "https://appointment-booking-backend-mw2h.onrender.com/api/therapists",
         formData
       );
     }
@@ -60,7 +60,7 @@ const AdminTherapists = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure to delete this Doctor?")) return;
     await axios.delete(
-      `http://localhost:5000/api/therapists/${id}`
+      `https://appointment-booking-backend-mw2h.onrender.com/api/therapists/${id}`
     );
     fetchTherapists();
   };
