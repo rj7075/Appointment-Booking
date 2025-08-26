@@ -29,7 +29,7 @@ const Login = () => {
 
       // Step 3: Fetch user info
       const userRes = await axios.get(
-        "http://localhost:5000/api/auth/me",
+        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/me",
         {
           headers: {
             Authorization: `Bearer ${token}`,
