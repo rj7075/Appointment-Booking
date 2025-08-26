@@ -7,7 +7,7 @@ const AdminAppointments = () => {
   const fetchAppointments = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/appointments"
+        "https://appointment-booking-backend-mw2h.onrender.com/api/appointments"
       );
       setAppointments(res.data);
     } catch (err) {
