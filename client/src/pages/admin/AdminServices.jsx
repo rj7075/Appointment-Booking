@@ -16,7 +16,7 @@ const AdminServices = () => {
   const fetchServices = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/services"
+        "https://appointment-booking-backend-mw2h.onrender.com/api/services"
       );
       setServices(res.data);
       toast.success("Services Fetched Successfully")
@@ -50,13 +50,13 @@ const AdminServices = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/services/${editingId}`,
+          `https://appointment-booking-backend-mw2h.onrender.com/api/services/${editingId}`,
           formData,
           config
         );
       } else {
         await axios.post(
-          "http://localhost:5000/api/services",
+          "https://appointment-booking-backend-mw2h.onrender.com/api/services",
           formData,
           config
         );
@@ -87,7 +87,7 @@ const AdminServices = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/services/${id}`,
+        `https://appointment-booking-backend-mw2h.onrender.com/api/services/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
