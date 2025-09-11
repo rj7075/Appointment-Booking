@@ -26,11 +26,18 @@ app.use("/api/treatments", treatmentRoutes);
 app.use("/api/services", require("./routes/serviceRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39dbc57 (files updated)
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 39dbc57 (files updated)
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
