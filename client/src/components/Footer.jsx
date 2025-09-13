@@ -81,12 +81,12 @@ const Footer = () => {
           <p>
             <BiPhoneCall /> Need Help? 24/7
             <br />
-            <strong>+91 88888899999</strong>
+            <strong>+91 9838692186</strong>
           </p>
           <p>
-            <PiMapPinLineBold /> PhysioWell, Govindpuram,
+            <PiMapPinLineBold /> PhysioWell, Gurugram,
             <br />
-            Ghaziabad, Uttar Pradesh 201001
+            Gurgram Sector 66 Golf Course Exns. Road
           </p>
         </div>
       </div>
