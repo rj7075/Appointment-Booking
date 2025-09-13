@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const AdminServices = () => {
   const [services, setServices] = useState([]);
@@ -15,13 +15,11 @@ const AdminServices = () => {
 
   const fetchServices = async () => {
     try {
-      const res = await axios.get(
-        "https://appointment-booking-backend-mw2h.onrender.com/api/services"
-      );
+      const res = await axios.get("http://localhost:4000/api/services");
       setServices(res.data);
-      toast.success("Services Fetched Successfully")
+      toast.success("Services Fetched Successfully");
     } catch (err) {
-      toast.error("Failed to fetch Servies")
+      toast.error("Failed to fetch Servies");
       console.error("Failed to fetch services", err);
     }
   };
@@ -50,13 +48,13 @@ const AdminServices = () => {
     try {
       if (editingId) {
         await axios.put(
-          `https://appointment-booking-backend-mw2h.onrender.com/api/services/${editingId}`,
+          `http://localhost:4000/api/services/${editingId}`,
           formData,
           config
         );
       } else {
         await axios.post(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/services",
+          "http://localhost:4000/api/services",
           formData,
           config
         );
@@ -86,17 +84,12 @@ const AdminServices = () => {
       return;
 
     try {
-      await axios.delete(
-        `https://appointment-booking-backend-mw2h.onrender.com/api/services/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      await axios.delete(`http://localhost:4000/api/services/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       fetchServices();
-      
     } catch (err) {
       toast.error("Failed to Fetch Services");
-      
     }
   };
 

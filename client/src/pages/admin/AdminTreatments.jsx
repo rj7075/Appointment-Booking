@@ -16,9 +16,7 @@ const AdminTreatments = () => {
 
   const fetchTreatments = async () => {
     try {
-      const res = await axios.get(
-        "https://appointment-booking-backend-mw2h.onrender.com/api/treatments"
-      );
+      const res = await axios.get("http://localhost:4000/api/treatments");
       setTreatments(res.data);
     } catch (err) {
       console.error("Failed to fetch treatments");
@@ -50,13 +48,10 @@ const AdminTreatments = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure to delete this Treatment?")) return;
     try {
-      await axios.delete(
-        `https://appointment-booking-backend-mw2h.onrender.com/api/treatments/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      toast.success("Deleted successfully!")
+      await axios.delete(`http://localhost:4000/api/treatments/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      toast.success("Deleted successfully!");
       setMessage("Deleted successfully!");
       fetchTreatments();
     } catch (err) {
@@ -74,7 +69,7 @@ const AdminTreatments = () => {
     try {
       if (editingId) {
         await axios.put(
-          `https://appointment-booking-backend-mw2h.onrender.com/api/treatments/${editingId}`,
+          `http://localhost:4000/api/treatments/${editingId}`,
           payload,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -82,13 +77,9 @@ const AdminTreatments = () => {
         );
         setMessage("Treatment updated!");
       } else {
-        await axios.post(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/treatments",
-          payload,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        await axios.post("http://localhost:4000/api/treatments", payload, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setMessage("Treatment added!");
       }
       setFormData({ title: "", conditions: "", more: "", image: "" });

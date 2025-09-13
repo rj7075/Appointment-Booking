@@ -10,14 +10,11 @@ const AdminUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/users",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await axios.get("http://localhost:4000/api/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setUsers(res.data);
       } catch (err) {
         console.error("Failed to fetch users:", err);

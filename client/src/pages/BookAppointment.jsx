@@ -22,22 +22,19 @@ const BookAppointment = () => {
     const fetchUserAndTreatments = async () => {
       try {
         const treatRes = await axios.get(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/treatments"
+          "http://localhost:4000/api/treatments"
         );
         setTreatments(treatRes.data);
 
         const serviceRes = await axios.get(
-          "http://localhost:5000/api/services"
+          "http://localhost:4000/api/services"
         );
         setServices(serviceRes.data);
 
         const token = localStorage.getItem("token");
-        const userRes = await axios.get(
-          "http://localhost:5000/api/auth/me",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const userRes = await axios.get("http://localhost:4000/api/auth/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         setFormData((prev) => ({
           ...prev,
@@ -67,7 +64,7 @@ const BookAppointment = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/appointments/book",
+        "http://localhost:4000/api/appointments/book",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -2,63 +2,49 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
+
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  // Handle input changes
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
 
     try {
-      // Step 1: Login request
+      // ✅ Step 1: Send login request
       const res = await axios.post(
-
-        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/login",
-
-        "https://appointment-booking-server-32uq.onrender.com/api/auth/login",
-
+        "http://localhost:4000/api/auth/login",
         formData
       );
-      const token = res.data.token;
 
-      // Step 2: Save token
+      const { token, user } = res.data;
+
+      // ✅ Step 2: Save token & user
       localStorage.setItem("token", token);
-
-      // Step 3: Fetch user info
-      const userRes = await axios.get(
-        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/me",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      const user = userRes.data;
-
-      // Optional: Save user info
       localStorage.setItem("user", JSON.stringify(user));
 
-      // Step 4: Redirect based on role
+      // ✅ Step 3: Redirect based on role
       if (user.role === "admin") {
-        toast.success("Admin login successful!")
-        // alert("Admin login successful!");
+        toast.success("Admin login successful!");
         navigate("/admin");
       } else {
-        // alert("Login successful!");
-         toast.success("Logged In successful!")
+        toast.success("Logged in successfully!");
         navigate("/");
       }
     } catch (err) {
-       toast.error(err.message);
-      setError(err.response?.data?.message || "Login failed");
+      console.error("Login frontend error:", err); // 👈 log error in console
+      const msg = err.response?.data?.message || "Login failed";
+      toast.error(msg);
+      setError(msg);
     }
   };
 
@@ -93,7 +79,9 @@ const Login = () => {
           />
         </div>
 
-        <button className="btn btn-primary w-100">Login</button>
+        <button type="submit" className="btn btn-primary w-100">
+          Login
+        </button>
       </form>
 
       <div className="text-center mt-3">

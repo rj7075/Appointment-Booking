@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +22,8 @@ const Register = () => {
     e.preventDefault();
     setError(null);
     try {
-      await axios.post(
-        "https://appointment-booking-backend-mw2h.onrender.com/api/auth/register",
-        formData
-      );
-      toast.success("Registered Successfully . Please login!")
+      await axios.post("http://localhost:4000/api/auth/register", formData);
+      toast.success("Registered Successfully . Please login!");
       navigate("/login");
     } catch (err) {
       toast.error(err.message);

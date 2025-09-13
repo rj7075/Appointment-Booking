@@ -6,9 +6,7 @@ const AdminAppointments = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get(
-        "https://appointment-booking-backend-mw2h.onrender.com/api/appointments"
-      );
+      const res = await axios.get("http://localhost:4000/api/appointments");
       setAppointments(res.data);
     } catch (err) {
       console.error("Failed to fetch appointments", err);
@@ -19,9 +17,7 @@ const AdminAppointments = () => {
     console.log("Deleting ID:", id);
     if (!window.confirm("Are you sure to delete this appointment?")) return;
     try {
-      await axios.delete(
-        `https://appointment-booking-backend-mw2h.onrender.com/api/appointments/${id}`
-      );
+      await axios.delete(`http://localhost:4000/api/appointments/${id}`);
       fetchAppointments();
     } catch (err) {
       console.error("Failed to delete appointment", err);

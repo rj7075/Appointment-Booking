@@ -8,9 +8,7 @@ const ServicesSection = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await axios.get(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/services"
-        );
+        const res = await axios.get("http://localhost:4000/api/services");
         setServices(res.data);
       } catch (err) {
         console.error("Error fetching services", err);

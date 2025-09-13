@@ -58,7 +58,7 @@ const Home = () => {
           <h2 className="mb-4">What Our Patients Say</h2>
           {/* Use the Shapo widget div below */}
           <div id="shapo-widget-3cabe4672b2773c9f54c"></div>
-{/*           <script
+          {/*           <script
             id="shapo-embed-js"
             type="text/javascript"
             src="https://cdn.shapo.io/js/embed.js"

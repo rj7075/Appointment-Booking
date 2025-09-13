@@ -29,13 +29,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-      
+
       <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
         <Route path="/contact" element={<Contact />} />
         <Route path="/treatments" element={<Treatments />} />
         <Route path="/book" element={<BookAppointment />} />

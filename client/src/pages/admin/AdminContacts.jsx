@@ -8,14 +8,11 @@ const AdminContacts = () => {
     const fetchMessages = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(
-          "https://appointment-booking-backend-mw2h.onrender.com/api/contacts",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await axios.get("http://localhost:4000/api/contacts", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setMessages(res.data);
       } catch (err) {
         console.error("Failed to fetch contact messages", err);
