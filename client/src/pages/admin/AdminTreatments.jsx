@@ -16,7 +16,7 @@ const AdminTreatments = () => {
 
   const fetchTreatments = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/treatments");
+      const res = await axios.get("https://appointment-booking-server1.onrender.com/api/treatments");
       setTreatments(res.data);
     } catch (err) {
       console.error("Failed to fetch treatments");
@@ -48,7 +48,7 @@ const AdminTreatments = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure to delete this Treatment?")) return;
     try {
-      await axios.delete(`http://localhost:4000/api/treatments/${id}`, {
+      await axios.delete(`https://appointment-booking-server1.onrender.com/api/treatments/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Deleted successfully!");
@@ -69,7 +69,7 @@ const AdminTreatments = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:4000/api/treatments/${editingId}`,
+          `https://appointment-booking-server1.onrender.com/api/treatments/${editingId}`,
           payload,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -77,7 +77,7 @@ const AdminTreatments = () => {
         );
         setMessage("Treatment updated!");
       } else {
-        await axios.post("http://localhost:4000/api/treatments", payload, {
+        await axios.post("https://appointment-booking-server1.onrender.com/api/treatments", payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage("Treatment added!");

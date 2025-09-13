@@ -22,17 +22,17 @@ const BookAppointment = () => {
     const fetchUserAndTreatments = async () => {
       try {
         const treatRes = await axios.get(
-          "http://localhost:4000/api/treatments"
+          "https://appointment-booking-server1.onrender.com/api/treatments"
         );
         setTreatments(treatRes.data);
 
         const serviceRes = await axios.get(
-          "http://localhost:4000/api/services"
+          "https://appointment-booking-server1.onrender.com/api/services"
         );
         setServices(serviceRes.data);
 
         const token = localStorage.getItem("token");
-        const userRes = await axios.get("http://localhost:4000/api/auth/me", {
+        const userRes = await axios.get("https://appointment-booking-server1.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -64,7 +64,7 @@ const BookAppointment = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:4000/api/appointments/book",
+        "https://appointment-booking-server1.onrender.com/api/appointments/book",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },

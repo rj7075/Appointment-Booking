@@ -21,7 +21,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/contacts",
+        "https://appointment-booking-server1.onrender.com/api/contacts",
         formData
       );
       setStatus({ type: "success", msg: "Message sent successfully!" });

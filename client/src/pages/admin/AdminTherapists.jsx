@@ -14,7 +14,7 @@ const AdminTherapists = () => {
   const [editId, setEditId] = useState(null);
 
   const fetchTherapists = async () => {
-    const res = await axios.get("http://localhost:4000/api/therapists");
+    const res = await axios.get("https://appointment-booking-server1.onrender.com/api/therapists");
     setTherapists(res.data);
   };
 
@@ -30,11 +30,11 @@ const AdminTherapists = () => {
     e.preventDefault();
     if (editId) {
       await axios.put(
-        `http://localhost:4000/api/therapists/${editId}`,
+        `https://appointment-booking-server1.onrender.com/api/therapists/${editId}`,
         formData
       );
     } else {
-      await axios.post("http://localhost:4000/api/therapists", formData);
+      await axios.post("https://appointment-booking-server1.onrender.com/api/therapists", formData);
     }
     setFormData({
       name: "",
@@ -54,7 +54,7 @@ const AdminTherapists = () => {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure to delete this Doctor?")) return;
-    await axios.delete(`http://localhost:4000/api/therapists/${id}`);
+    await axios.delete(`https://appointment-booking-server1.onrender.com/api/therapists/${id}`);
     fetchTherapists();
   };
 

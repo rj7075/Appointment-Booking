@@ -8,7 +8,7 @@ const TreatmentsSection = () => {
   useEffect(() => {
     const fetchTreatments = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/treatments");
+        const res = await axios.get("https://appointment-booking-server1.onrender.com/api/treatments");
         setTreatments(res.data);
       } catch (err) {
         console.error("Error fetching treatments", err);

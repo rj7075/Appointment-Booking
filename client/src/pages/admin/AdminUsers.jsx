@@ -10,7 +10,7 @@ const AdminUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/users", {
+        const res = await axios.get("https://appointment-booking-server1.onrender.com/api/users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

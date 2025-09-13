@@ -8,7 +8,7 @@ const TherapistSection = () => {
   useEffect(() => {
     const fetchTherapists = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/therapists");
+        const res = await axios.get("https://appointment-booking-server1.onrender.com/api/therapists");
         setTherapists(res.data);
       } catch (err) {
         console.error("Failed to fetch therapists", err);

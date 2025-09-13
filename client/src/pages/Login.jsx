@@ -22,7 +22,7 @@ const Login = () => {
     try {
       // ✅ Step 1: Send login request
       const res = await axios.post(
-        "http://localhost:4000/api/auth/login",
+        "https://appointment-booking-server1.onrender.com/api/auth/login",
         formData
       );
 

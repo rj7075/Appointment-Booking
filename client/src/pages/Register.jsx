@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     setError(null);
     try {
-      await axios.post("http://localhost:4000/api/auth/register", formData);
+      await axios.post("https://appointment-booking-server1.onrender.com/api/auth/register", formData);
       toast.success("Registered Successfully . Please login!");
       navigate("/login");
     } catch (err) {

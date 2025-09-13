@@ -8,7 +8,7 @@ const AdminContacts = () => {
     const fetchMessages = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:4000/api/contacts", {
+        const res = await axios.get("https://appointment-booking-server1.onrender.com/api/contacts", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
