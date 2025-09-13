@@ -1,4 +1,3 @@
-// server/server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -26,23 +25,15 @@ app.use("/api/treatments", treatmentRoutes);
 app.use("/api/services", require("./routes/serviceRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 39dbc57 (files updated)
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 39dbc57 (files updated)
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
-
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

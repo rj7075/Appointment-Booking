@@ -19,11 +19,11 @@ const Login = () => {
     try {
       // Step 1: Login request
       const res = await axios.post(
-<<<<<<< HEAD
+
         "https://appointment-booking-backend-mw2h.onrender.com/api/auth/login",
-=======
+
         "https://appointment-booking-server-32uq.onrender.com/api/auth/login",
->>>>>>> 39dbc57 (files updated)
+
         formData
       );
       const token = res.data.token;
